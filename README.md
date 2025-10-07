@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Felicia Jessy - Portfolio</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background: #f4f4f4;
+            color: #222;
+        }
+        header {
+            background: #2c2e31;
+            color: #fff;
+            padding: 0 0 0 0;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+        }
+        .nav {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 0 32px;
+            height: 64px;
+        }
+        .nav .logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+            letter-spacing: 1px;
+        }
+        .nav ul {
+            list-style: none;
+            display: flex;
+            gap: 32px;
+            margin: 0;
+            padding: 0;
+        }
+        .nav ul li a {
+            color: #fff;
+            text-decoration: none;
+            font-size: 1rem;
+            transition: color 0.2s;
+        }
+        .nav ul li a:hover {
+            color: #cce0ff;
+        }
+        .main-content {
+            max-width: 1000px;
+            margin: 40px auto;
+            background: #fff;
+            padding: 40px 32px;
+            border-radius: 14px;
+            box-shadow: 0 2px 16px rgba(0,0,0,0.10);
+        }
+        .profile-photo {
+            display: block;
+            margin: 0 auto 24px auto;
+            width: 150px;
+            height: 150px;
+            object-fit: cover;
+            border-radius: 50%;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.10);
+            opacity: 0;
+            animation: fadeInPhoto 1.2s ease forwards;
+        }
+        @keyframes fadeInPhoto {
+            to { opacity: 1; }
+        }
+        h1 {
+            color: #4c4f55;
+            margin-bottom: 8px;
+            text-align: center;
+        }
+        .bio {
+            margin-bottom: 32px;
+            opacity: 0;
+            transition: opacity 1.2s ease;
+            text-align: center;
+        }
+        .fade-in {
+            opacity: 1;
+        }
+        .section {
+            margin-bottom: 48px;
+        }
+        .skills {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 24px;
+            justify-content: center;
+            margin-bottom: 32px;
+        }
+        .skill {
+            background: #f0f6ff;
+            border-radius: 8px;
+            padding: 16px 24px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            font-size: 1.1rem;
+            box-shadow: 0 1px 4px rgba(0,0,0,0.04);
+        }
+        .skill-icon {
+            font-size: 1.5rem;
+        }
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 24px;
+        }
+        .project-card {
+            background: #f8faff;
+            border-radius: 10px;
+            box-shadow: 0 1px 6px rgba(0,0,0,0.06);
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+        .project-card:hover {
+            transform: translateY(-4px) scale(1.03);
+            box-shadow: 0 4px 16px rgba(45,108,223,0.10);
+        }
+        .project-image {
+            width: 100%;
+            height: 120px;
+            object-fit: cover;
+            border-radius: 6px;
+            margin-bottom: 12px;
+            background: #191a1b;
+        }
+        .project-title {
+            font-size: 1.1rem;
+            font-weight: bold;
+            margin-bottom: 6px;
+        }
+        .project-desc {
+            font-size: 0.98rem;
+            margin-bottom: 8px;
+        }
+        .project-link {
+            color: #4e5158;
+            text-decoration: none;
+            font-weight: 500;
+        }
+        .contact-section {
+            background: #f0f6ff;
+            padding: 24px;
+            border-radius: 10px;
+            text-align: center;
+        }
+        .contact-form {
+            display: flex;
+            flex-direction: column;
+            gap: 14px;
+            max-width: 340px;
+            margin: 0 auto 18px auto;
+        }
+        .contact-form input, .contact-form textarea {
+            padding: 10px;
+            border-radius: 5px;
+            border: 1px solid #b3c6e0;
+            font-size: 1rem;
+        }
+        .contact-form button {
+            background: #63666b;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            padding: 10px 0;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: background 0.2s;
+        }
+        .contact-form button:hover {
+            background: #46494e;
+        }
+        .social-links {
+            margin-top: 10px;
+            display: flex;
+            justify-content: center;
+            gap: 18px;
+        }
+        .social-links a {
+            color: #212325;
+            font-size: 1.5rem;
+            text-decoration: none;
+            transition: color 0.2s;
+        }
+        .social-links a:hover {
+            color: #292b2e;
+        }
+        @media (max-width: 700px) {
+            .main-content {
+                padding: 18px 4vw;
+            }
+            .nav {
+                flex-direction: column;
+                height: auto;
+                gap: 8px;
+                padding: 8px 8vw;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav class="nav">
+            <div class="logo">Felicia Jessy</div>
+            <ul>
+                <li><a href="#about">About</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main class="main-content">
+        <section id="about" class="section">
+            <img src="Jessy.png" alt="Felicia Jessy Photo" class="profile-photo" />
+            <h1>Felicia Jessy Setiawan</h1>
+            <div class="bio" id="bio">
+                <p> Hi, let me introduce myself. <br>My name is Felicia Jessy Setiawan. <br>This is my portfolio. I am a woman who has talents in various fields, <br>especially visual and mathematical fields.</p>
+            </div>
+        </section>
+        <section id="skills" class="section">
+            <h2>Skills</h2>
+            <div class="skills">
+                <div class="skill"><span class="skill-icon">💻</span> Audio Visual</div>
+                <div class="skill"><span class="skill-icon">🎨</span> Drawing and Design</div>
+                <div class="skill"><span class="skill-icon">⚙️</span> Problem Solving</div>
+                <div class="skill"><span class="skill-icon">🌐</span> Communication</div>
+            </div>
+        </section>
+        <section id="projects" class="section">
+            <h2>Projects</h2>
+            <div class="projects-grid">
+                <div class="project-card">
+                    <img src="01.jpg" alt="Project 1" class="project-image" />
+                    <div class="project-title">Math</div>
+                    <div class="project-desc">I like mathematic, counting is not a complicated thing for me.</div>
+                    <a href="#" class="project-link">View</a>
+                </div>
+                <div class="project-card">
+                    <img src="02.jpg" alt="Project 2" class="project-image" />
+                    <div class="project-title">Singing</div>
+                    <div class="project-desc">Voice is one of the main elements for humans, singing is not just a hobby, but how i love it.</div>
+                    <a href="#" class="project-link">View</a>
+                </div>
+                <div class="project-card">
+                    <img src="03.jpg" alt="Project 3" class="project-image" />
+                    <div class="project-title">Audio Visual</div>
+                    <div class="project-desc">I like music, but i like music that can visualize the human mind.</div>
+                    <a href="#" class="project-link">View</a>
+                </div>
+            </div>
+        </section>
+        <section id="contact" class="section contact-section">
+            <h2>Contact</h2>
+            <form class="contact-form">
+                <input type="text" placeholder="Your Name" required />
+                <input type="email" placeholder="Your Email" required />
+                <textarea rows="4" placeholder="Your Message" required></textarea>
+                <button type="submit">Send Message</button>
+            </form>
+            <div class="social-links">
+                <a href="#" title="LinkedIn">&#128100;</a>
+                <a href="#" title="GitHub">&#128187;</a>
+                <a href="#" title="Instagram">&#128247;</a>
+            </div>
+            <div style="margin-top:10px; color:#888; font-size:0.95rem;">Email: fsjessy1106@gmail.com</div>
+        </section>
+    </main>
+<script>
+    window.addEventListener('DOMContentLoaded', function() {
+        setTimeout(function() {
+            document.getElementById('bio').classList.add('fade-in');
+        }, 400);
+        // Prevent default form submission for demo
+        document.querySelector('.contact-form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            alert('Thank you for your message!');
+        });
+    });
+</script>
+</body>
+</html>
